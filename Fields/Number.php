@@ -66,6 +66,6 @@ class Number extends Field
     public function getHtmlField()
     {
         return '<label class="label">' . $this->getLabel() . '</label>
-            <input type="' . $this->getType() . '" name="' . $this->getName() . '" id="' . $this->getId() . '" class="' . $this->getClass() . '" value="' . $this->getValue() . '" placeholder="' . $this->getPlaceholder() . '">';
+            <input type="' . $this->getType() . '" name="' . $this->getName() . '" id="' . $this->getId() . '" class="' . $this->getClass() . '" value="' . $this->getValue() . '" placeholder="' . $this->getPlaceholder() . '" min="'.$this->getMin().'" max="'.$this->getMax().'" step="'. $this->getStep() .'">';
     }
 }
