@@ -4,7 +4,7 @@ namespace My_Helper\Form;
 
 class Field
 {
-    protected $type, $name, $id, $class, $value, $placeholder, $taille, $label, $options;
+    protected $type, $name, $id, $class, $value, $placeholder, $taille, $label;
 
     /**
      * Field constructor.
@@ -15,7 +15,7 @@ class Field
      * @param $value
      * @param $placeholder
      */
-    public function __construct($type, $name, $id, $class, $value, $placeholder, $taille = 3, $label, array $options = [])
+    public function __construct($type, $name, $id, $class, $value, $placeholder, $taille = 3, $label)
     {
         $this->type = $type;
         $this->name = $name;
@@ -25,7 +25,6 @@ class Field
         $this->placeholder = $placeholder;
         $this->taille = $taille;
         $this->label = $label;
-        $this->options = $options;
     }
 
     /**
@@ -157,42 +156,9 @@ class Field
         $this->placeholder = $placeholder;
     }
 
-    /**
-     * @return array
-     */
-    public function getOptions()
-    {
-        return $this->options;
-    }
-
-    /**
-     * @param array $options
-     */
-    public function setOptions($options)
-    {
-        $this->options = $options;
-    }
-
-
     public function getHtmlField()
     {
-        if ($this->getType() === 'select') {
-            $outDatas = '<label class="label">' . $this->getLabel() . '</label>
-            <select name="' . $this->getName() . '" id="' . $this->getId() . '" class="' . $this->getClass() . '">
-                <option value="">--</option>';
-            /** @var Options $option */
-            foreach ($this->getOptions() as $option) {
-                $outDatas .= $option->getHtml();
-            }
-            $outDatas .= '</select>';
-            return $outDatas;
-        } elseif ($this->getType() === 'checkbox') {
-            //TODO::ajout d'un input type checkbox
-        } elseif ($this->getType() === 'radio') {
-            //TODO::ajout d'un input type radio
-        } else {
             return '<label class="label">' . $this->getLabel() . '</label>
             <input type="' . $this->getType() . '" name="' . $this->getName() . '" id="' . $this->getId() . '" class="' . $this->getClass() . '" value="' . $this->getValue() . '" placeholder="' . $this->getPlaceholder() . '">';
-        }
     }
 }
