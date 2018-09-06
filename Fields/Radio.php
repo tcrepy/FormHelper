@@ -3,7 +3,7 @@
 namespace My_Helper\Form\Fields;
 
 
-class Radio implements \iField
+class Radio implements iField
 {
     public function getHtmlField()
     {
