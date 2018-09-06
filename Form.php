@@ -2,6 +2,8 @@
 
 namespace My_Helper\Form;
 
+use My_Helper\Form\Fields\Field;
+
 class Form
 {
     protected $param;
