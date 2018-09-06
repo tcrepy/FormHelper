@@ -2,7 +2,7 @@
 
 namespace My_Helper\Form\Fields;
 
-class Field
+class Field implements \iField
 {
     protected $type, $name, $id, $class, $value, $placeholder, $taille, $label;
 
