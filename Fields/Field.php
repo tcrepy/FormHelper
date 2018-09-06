@@ -1,6 +1,6 @@
 <?php
 
-namespace My_Helper\Form;
+namespace My_Helper\Form\Fields;
 
 class Field
 {
