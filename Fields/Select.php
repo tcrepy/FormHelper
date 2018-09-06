@@ -43,7 +43,7 @@ class Select extends Field
             '<label class="label">' . $this->getLabel() . '</label>
             <select name="' . $this->getName() . '" id="' . $this->getId() . '" class="' . $this->getClass() . '">
                 <option value="">--</option>';
-        /** @var Options $option */
+        /** @var SelectOptions $option */
         foreach ($this->getOptions() as $option) {
             $outDatas .= $option->getHtml();
         }

@@ -7,7 +7,7 @@ class Number extends Field
 {
     protected $min, $max, $step;
 
-    public function __construct($name, $id, $class, $value, $placeholder, $taille = 3, $label, $min = 0, $max = '', $step = 1)
+    public function __construct($name, $id, $class, $value, $placeholder, $taille = 3, $label, $min = '', $max = '', $step = '')
     {
         parent::__construct('number', $name, $id, $class, $value, $placeholder, $taille, $label);
         $this->min = $min;

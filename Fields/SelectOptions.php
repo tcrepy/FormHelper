@@ -2,7 +2,7 @@
 
 namespace My_Helper\Form\Fields;
 
-class Options
+class SelectOptions
 {
     protected $value, $name, $selected;
 
