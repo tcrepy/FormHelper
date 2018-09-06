@@ -15,9 +15,9 @@ class Select extends Field
      * @param $value
      * @param $placeholder
      */
-    public function __construct($type = 'select', $name, $id, $class, $value, $placeholder, $taille = 3, $label, array $options = [])
+    public function __construct($name, $id, $class, $value, $placeholder, $taille = 3, $label, array $options = [])
     {
-        parent::__construct($type, $name, $id, $class, $value, $placeholder, $taille = 3, $label);
+        parent::__construct('select', $name, $id, $class, $value, $placeholder, $taille = 3, $label);
         $this->options = $options;
     }
 
