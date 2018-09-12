@@ -12,7 +12,7 @@ class Form
      * Form constructor.
      * @param $param
      */
-    public function __construct(array $param)
+    public function __construct(array $param = [])
     {
         $this->param = $param;
     }
@@ -40,13 +40,13 @@ class Form
 
     public function constructForm()
     {
-        $outDatas = '<div class="row padding-top">';
+        $outDatas = '<div class="row padding-top form">';
         $i = 0;
         /** @var Field $field */
         foreach ($this->getParam() as $field) {
             $i += $field->getTaille();
             if ($i > 12) {
-                $outDatas .= '</div><div class="row padding-top">';
+                $outDatas .= '</div><div class="row padding-top form">';
                 $i = 0;
             }
             $outDatas .= '<div class="column_' . $field->getTaille() . '">';
