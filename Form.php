@@ -49,7 +49,7 @@ class Form
                 $outDatas .= '</div><div class="row padding-top form">';
                 $i = 0;
             }
-            $outDatas .= '<div class="column_' . $field->getTaille() . '">';
+            $outDatas .= '<div class="column_' . $field->getTaille() . ' ' . (($field->getOffset() === 0) ? '' : 'offset_' . $field->getOffset()) . '">';
             $outDatas .= $field->getHtmlField();
             $outDatas .= '</div>';
         }
@@ -60,9 +60,9 @@ class Form
     public function addSubmitButton($id = 'valider', $name = 'Valider', $class = '', $taille = 2)
     {
         return
-        '<div class="row padding-top">
-            <div class="column_'. $taille .'">
-                <button type="submit" id="'. $id .'" class="'. $class.'">'. $name .'</button>
+            '<div class="row padding-top">
+            <div class="column_' . $taille . '">
+                <button type="submit" id="' . $id . '" class="' . $class . '">' . $name . '</button>
             </div>
         </div>';
     }

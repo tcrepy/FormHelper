@@ -7,7 +7,7 @@ use My_Helper\Form\Fields\iField;
 
 class Button implements iField
 {
-    protected $label, $id, $class, $taille;
+    protected $label, $id, $class, $taille, $offset;
 
     /**
      * Button constructor.
@@ -16,12 +16,29 @@ class Button implements iField
      * @param $class
      * @param $taille
      */
-    public function __construct($label = '', $id = '', $class = '', $taille = 3)
+    public function __construct($label = '', $id = '', $class = '', $taille = 3, $offset = 0)
     {
         $this->label = $label;
         $this->id = $id;
         $this->class = $class;
         $this->taille = $taille;
+        $this->offset = $offset;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * @param int $offset
+     */
+    public function setOffset($offset)
+    {
+        $this->offset = $offset;
     }
 
     /**

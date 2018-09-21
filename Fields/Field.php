@@ -4,7 +4,7 @@ namespace My_Helper\Form\Fields;
 
 class Field implements iField
 {
-    protected $type, $name, $id, $class, $value, $placeholder, $taille, $label;
+    protected $type, $name, $id, $class, $value, $placeholder, $taille, $label, $offset;
 
     /**
      * Field constructor.
@@ -15,7 +15,7 @@ class Field implements iField
      * @param $value
      * @param $placeholder
      */
-    public function __construct($type, $name, $id, $class, $value, $placeholder, $taille = 3, $label)
+    public function __construct($type, $name, $id, $class, $value, $placeholder, $taille = 3, $label, $offset = 0)
     {
         $this->type = $type;
         $this->name = $name;
@@ -25,6 +25,23 @@ class Field implements iField
         $this->placeholder = $placeholder;
         $this->taille = $taille;
         $this->label = $label;
+        $this->offset = $offset;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * @param int $offset
+     */
+    public function setOffset($offset)
+    {
+        $this->offset = $offset;
     }
 
     /**

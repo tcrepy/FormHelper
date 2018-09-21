@@ -4,14 +4,212 @@ namespace My_Helper\Form\Fields;
 
 class Textarea implements iField
 {
+    protected $type, $name, $id, $class, $value, $placeholder, $taille, $label, $offset;
+
+    /**
+     * Field constructor.
+     * @param $type
+     * @param $name
+     * @param $id
+     * @param $class
+     * @param $value
+     * @param $placeholder
+     */
+    public function __construct($name, $id, $class, $value, $placeholder, $taille = 3, $label, $offset = 0, $col = 30, $row = 10)
+    {
+        $this->name = $name;
+        $this->id = $id;
+        $this->class = $class;
+        $this->value = $value;
+        $this->placeholder = $placeholder;
+        $this->taille = $taille;
+        $this->label = $label;
+        $this->offset = $offset;
+        $this->col = $col;
+        $this->row = $row;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCol()
+    {
+        return $this->col;
+    }
+
+    /**
+     * @param int $col
+     */
+    public function setCol($col)
+    {
+        $this->col = $col;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRow()
+    {
+        return $this->row;
+    }
+
+    /**
+     * @param int $row
+     */
+    public function setRow($row)
+    {
+        $this->row = $row;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * @param int $offset
+     */
+    public function setOffset($offset)
+    {
+        $this->offset = $offset;
+    }
+
+    /**
+     * @return int
+     */
     public function getTaille()
     {
-        // TODO: Implement getTaille() method.
+        return $this->taille;
+    }
+
+    /**
+     * @param int $taille
+     */
+    public function setTaille($taille)
+    {
+        $this->taille = $taille;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * @param mixed $label
+     */
+    public function setLabel($label)
+    {
+        $this->label = $label;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClass()
+    {
+        return $this->class;
+    }
+
+    /**
+     * @param mixed $class
+     */
+    public function setClass($class)
+    {
+        $this->class = $class;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param mixed $value
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlaceholder()
+    {
+        return $this->placeholder;
+    }
+
+    /**
+     * @param mixed $placeholder
+     */
+    public function setPlaceholder($placeholder)
+    {
+        $this->placeholder = $placeholder;
     }
 
     public function getHtmlField()
     {
-        // TODO: Implement getHtmlField() method.
+        return '<label class="label">' . $this->getLabel() . '</label>
+            <textarea name="' . $this->getName() . '" id="' . $this->getId() . '" class="' . $this->getClass() . '" cols="' . $this->getCol() . '" rows="' . $this->getRow() . '">' . $this->getValue() . '</textarea>';
     }
 
 }
