@@ -38,14 +38,18 @@ class Form
         $this->param[] = $field;
     }
 
-    public function constructForm()
+    public function constructForm($withRow = true)
     {
-        $outDatas = '<div class="row padding-top form">';
+        if ($withRow === true) {
+            $outDatas = '<div class="row padding-top form">';
+        } else {
+            $outDatas = '';
+        }
         $i = 0;
         /** @var Field $field */
         foreach ($this->getParam() as $field) {
             $i += $field->getTaille();
-            if ($i > 12) {
+            if ($withRow === true && $i > 12) {
                 $outDatas .= '</div><div class="row padding-top form">';
                 $i = 0;
             }
@@ -53,7 +57,9 @@ class Form
             $outDatas .= $field->getHtmlField();
             $outDatas .= '</div>';
         }
-        $outDatas .= '</div>';
+        if ($withRow === true) {
+            $outDatas .= '</div>';
+        }
         return $outDatas;
     }
 
