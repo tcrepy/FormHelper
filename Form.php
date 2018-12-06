@@ -49,7 +49,7 @@ class Form
         /** @var Field $field */
         foreach ($this->getParam() as $field) {
             $i += $field->getTaille();
-            if ($withRow === true && $i > 12) {
+            if ($withRow === true && $i >= 12) {
                 $outDatas .= '</div><div class="row padding-top form">';
                 $i = 0;
             }
